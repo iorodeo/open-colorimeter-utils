@@ -1,4 +1,4 @@
-Utilities for IO Rodeo's Open Colorimeter. 
+# Utilities for IO Rodeo's Open Colorimeter. 
 
 ## Installation 
 
