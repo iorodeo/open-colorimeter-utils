@@ -38,7 +38,7 @@ def app_main(input_files, output_file):
             vals = input_data['values']
         except Exception as error:
             error_msg = f'{toml_input_file}, missing {error}'
-            raise click.exceptions.Usage(error_msg)
+            raise click.exceptions.UsageError(error_msg)
 
         # Convert concetraton and absorbance values to numpy arrays
         try:
