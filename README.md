@@ -1,6 +1,6 @@
 Utilities for IO Rodeo's Open Colorimeter. 
 
-# Installation 
+## Installation 
 
 This package uses the [poetry](https://python-poetry.org/) dependency manager.
 The installation instructions for poetry can be found
@@ -16,7 +16,7 @@ Additional documentation on using poetry can be found
 [here](https://python-poetry.org/docs/)
 
 
-# Using the Open Colorimeter calibration tool
+## Using the Open Colorimeter calibration tool
 
 The Open Colorimeter calibration tool "oc-cal" is a command line program which can fit
 calibratin data and generate the calibration.json used by the Open Colorimeter.
@@ -80,7 +80,7 @@ file above is shown below
 
 In addtion the oc-cal program will fit the data and plots the results as shown below.
 
-![example plot](images/nitrite_example_calibration.png)
+![example plot](images/nitrite_calibration_example.png)
 
 
 An example of calibrations.json file made using multiple .toml input files is shown below
