@@ -1,4 +1,4 @@
-name = "Nitrate"
+name = "Nitrate API"
 led = 520 
 units = "ppm" 
 fit_type = "polynomial"

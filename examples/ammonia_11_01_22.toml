@@ -1,4 +1,4 @@
-name = "Ammonia"
+name = "Ammonia API"
 led = 630
 units = "ppm" 
 fit_type = "polynomial"
