@@ -1,6 +1,14 @@
 # Utilities for IO Rodeo's Open Colorimeter 
 
-## Installation 
+
+## Installing
+Install using pip 
+
+```bash
+$ pip install open-colorimeter-utils
+```
+
+## Installinng from source
 
 This package uses the [poetry](https://python-poetry.org/) dependency manager.
 The installation instructions for poetry can be found
