@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "open-colorimeter-utils"
-version = "0.1.0"
+version = "0.1.0.post2"
 description = "Utilities for iorodeo's open colorimeter"
 license = "MIT"
 authors = ["Will Dickson <will@iorodeo.com>"]

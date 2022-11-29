@@ -8,7 +8,7 @@ Install using pip
 $ pip install open-colorimeter-utils
 ```
 
-## Installinng from source
+## Installing from source
 
 This package uses the [poetry](https://python-poetry.org/) dependency manager.
 The installation instructions for poetry can be found
