@@ -27,6 +27,18 @@ Usage: oc-cal [OPTIONS] [INPUT_FILES]...
   Generates an Open Colorimeter calibration .json file from the .toml input
   files
 
+  .toml file format 
+  -----------------
+  name = "TestName"          # Name of the test
+  led = 630                  # Led wavelength
+  units = "ppm"              # Measurement units
+  fit_type = "polynomial"    # Fit type, polynomial or linear
+  fit_order = 2              # Order of the fit
+  values = [                 # Array of measurements
+      [c0, c1, .... , cn],   # Measurements in units
+      [a1, a1, .... , an]    # Corresponding absorbances
+      ]
+
 Options:
   -o, --output-file FILENAME  output file
   --help                      Show this message and exit.
@@ -130,14 +142,6 @@ An example of calibrations.json file made using multiple .toml input files is sh
   }
 }
 ```
-
-
-
-
-
-
-
-
 
 
 

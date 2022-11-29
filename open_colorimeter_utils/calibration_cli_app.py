@@ -10,7 +10,23 @@ from .data_fitting import polyfit_thru_zero
 @click.argument('input_files', nargs=-1) 
 @click.option('-o', '--output-file', 'output_file', type=click.File('w'), default='calibrations.json', help='output file')
 def app_main(input_files, output_file):
-    """Generates an Open Colorimeter calibration .json file from the .toml input files """
+    """Generates an Open Colorimeter calibration .json file from the .toml input files 
+
+    \b
+    .toml file format 
+    -----------------
+    name = "TestName"          # Name of the test
+    led = 630                  # Led wavelength
+    units = "ppm"              # Measurement units
+    fit_type = "polynomial"    # Fit type, polynomial or linear
+    fit_order = 2              # Order of the fit
+    values = [                 # Array of measurements
+        [c0, c1, .... , cn],   # Measurements in units
+        [a1, a1, .... , an]    # Corresponding absorbances
+        ]
+    
+    
+    """
 
     click.echo()
     click.echo(f'processing {len(input_files)} files')
