@@ -1,0 +1,9 @@
+name = "BSA"
+led = 275 
+units = "mg/mL" 
+fit_type = "linear"
+channel = 2
+values = [ 
+    [0.0, 0.40, 0.80, 1.20, 1.60, 2.00], 
+    [0.0, 0.26, 0.52, 0.78, 1.04, 1.26]
+]

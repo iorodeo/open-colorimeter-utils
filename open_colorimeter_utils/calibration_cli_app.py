@@ -20,6 +20,7 @@ def app_main(input_files, output_file):
     units = "ppm"              # Measurement units
     fit_type = "polynomial"    # Fit type, polynomial or linear
     fit_order = 2              # Order of the fit
+    channel = 0                # Deivce channel (optional)
     values = [                 # Array of measurements
         [c0, c1, .... , cn],   # Measurements in units
         [a1, a1, .... , an]    # Corresponding absorbances
@@ -64,7 +65,7 @@ def app_main(input_files, output_file):
             error_msg = f'{toml_input_file}, values incorrect format {error}'
             raise click.exceptoins.UsageError(error_msg)
 
-        # Fit data, constrained to go through zero
+        # Get fit type and order
         if fit_type not in ('linear', 'polynomial'):
             error_msg = f'{toml_input_file} unsupported fit type {fit_type}'
             raise click.exceptions.UsageError(error_msg)
@@ -76,6 +77,8 @@ def app_main(input_files, output_file):
             except Exception as error:
                 error_msg = f'{toml_input_file}, missing {error}'
                 raise click.exceptions.UsageError(error_msg)
+
+        # Fit data, constrained to go through zero
         fit_coef, abso_fit, conc_fit = polyfit_thru_zero(abso, conc, fit_order, 1000)
         conc_fit_polyval = np.polyval(fit_coef, abso_fit)
 
@@ -88,6 +91,11 @@ def app_main(input_files, output_file):
             'range'    :  {'min': abso.min(), 'max': abso.max()},
             }
         calibrations_dict[name] = cal
+
+        # Add optional channel information
+        channel = input_data.get('channel', None)
+        if channel is not None:
+            cal['channel'] = channel
 
         # Plot result
         fig, ax = plt.subplots(1,1)
